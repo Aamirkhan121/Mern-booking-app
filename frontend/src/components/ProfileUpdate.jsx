@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-const API_BASE_URL="http://localhost:4000"
+const API_BASE_URL="https://mern-booking-app-2ng3.onrender.com"
 
 const ProfileUpdate = () => {
   const [formData, setFormData] = useState({
