@@ -25,7 +25,7 @@ const BookingScreen = () => {
     const fetchRoom = async () => {
       try {
         setLoading(true);
-        const response = await axios.post(`http://localhost:4000/api/getRoomById/${roomid}`);
+        const response = await axios.post(`https://mern-booking-app-2ng3.onrender.com/api/getRoomById/${roomid}`);
         setRoom(response.data.room);
         setLoading(false);
       } catch (err) {
@@ -48,7 +48,7 @@ const BookingScreen = () => {
   async function onToken(token) {
     try {
       // Step 1: Check room availability before booking
-      const availabilityResponse = await axios.post('http://localhost:4000/api/rooms/check-availability', {
+      const availabilityResponse = await axios.post('https://mern-booking-app-2ng3.onrender.com/api/rooms/check-availability', {
         roomId: roomid,
         fromDate,
         toDate,
@@ -86,7 +86,7 @@ const BookingScreen = () => {
         token,
       };
 setLoading(true)
-      await axios.post('http://localhost:4000/api/booking', bookingData);
+      await axios.post('https://mern-booking-app-2ng3.onrender.com/api/booking', bookingData);
       setLoading(false)
       Swal.fire("Congratulation","Your Room Booked successful!").then(result=>{
         window.location.href="/my-booking"
