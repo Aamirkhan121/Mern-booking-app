@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-const API_BASE_URL="http://localhost:4000"
+const API_BASE_URL="https://mern-booking-app-2ng3.onrender.com"
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
