@@ -12,7 +12,7 @@ const ReportPage = () => {
     // Fetch booking data when the component mounts
     const fetchBookingData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/admin/booking'); // Update API endpoint accordingly
+        const response = await axios.get('https://mern-booking-app-2ng3.onrender.com/api/admin/booking'); // Update API endpoint accordingly
         console.log(response.data)
         setBookings(response.data);
         setLoading(false);
