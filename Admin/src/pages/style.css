@@ -1,0 +1,31 @@
+/* styles.css */
+
+/* Define the keyframes for the border animation */
+@keyframes borderAnimation {
+    0% {
+      border-color: #3490dc; /* Blue */
+    }
+    25% {
+      border-color: #38c172; /* Green */
+    }
+    50% {
+      border-color: #ffed4a; /* Yellow */
+    }
+    75% {
+      border-color: #e3342f; /* Red */
+    }
+    100% {
+      border-color: #3490dc; /* Back to Blue */
+    }
+  }
+  
+  /* Apply the animation to the boxes */
+  .animated-border {
+    border: 2px solid; /* Initial border */
+    border-radius: 8px; /* Rounded corners */
+    animation: borderAnimation 4s infinite; /* 4-second duration, infinite loop */
+  }
+  .border-1 {
+    border-radius: 8px;
+  }
+  
