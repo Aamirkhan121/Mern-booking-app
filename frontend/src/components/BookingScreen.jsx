@@ -103,50 +103,55 @@ setLoading(true)
   if (!room) return <h1 className="text-2xl text-gray-500">No room found</h1>;
 
   return (
-    <div className="container mx-auto mt-2 px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">{room.name}</h1>
-      <div className="bg-white shadow-lg rounded-lg p-6">
-        <div className="flex">
-          <div className="w-1/2">
-            <img src={room.imageurls[0]} alt={room.name} className="rounded-lg object-cover w-full h-80" />
-          </div>
-          <div className="w-1/2 pl-8">
-            <h2 className="text-2xl font-semibold mb-4">Room ID: {roomid}</h2>
-            <div className='text-right'>
-              <b>
-                <h1>Booking Details</h1>
-                <hr />
-                <p>Name: {user.name}</p>
-                <p>From Date: <input type="date" onChange={(e) => setFromDate(e.target.value)} /></p>
-                <p>To Date: <input type="date" onChange={(e) => setToDate(e.target.value)} /></p>
-                <p>Max Count: {room.maxcount}</p>
-              </b>
-            </div>
-            <div className='text-right'>
-              <b>
-                <h1>Amount</h1>
-                <hr />
-                <p>Total Days: {totalDays}</p>
-                <p>Rent per Day: ₹{room.rentperday}</p>
-                <p>Total Amount: ₹{totalAmount}</p>
-              </b>
-            </div>
-            <div className='mt-2' style={{ float: 'right' }}>
-              <StripeCheckout
-                amount={totalAmount * 100} // Stripe expects amount in cents
-                token={onToken} // Pass `onToken` directly to get the token object
-                currency='INR'
-                stripeKey="pk_test_51PMNeMP6OUGBeMBlaj9WphMUxWRr2QtPC5EYCGLgLTq3bbshjRqcvnvHYpy3gFcyk7fdSxN8MSRMzhAjW9Jez6qH00HldOHOz7"
-              >
-                <button className="bg-blue-500 text-white mr-5 px-4 py-2 rounded-lg hover:bg-blue-600">
-                  Pay Now
-                </button>
-              </StripeCheckout>
-            </div>
-          </div>
+    <div className="container mx-auto px-4 py-8">
+    <h1 className="text-3xl font-bold mb-6 text-center">{room.name}</h1>
+    <div className="bg-white shadow-lg rounded-lg p-6 grid md:grid-cols-2 gap-6">
+      {/* Image Section */}
+      <div>
+        <img src={room.imageurls[0]} alt={room.name} className="rounded-lg object-cover w-full h-64" />
+      </div>
+
+      {/* Booking and Details Section */}
+      <div className="flex flex-col">
+        <h2 className="text-xl font-semibold mb-4">Room ID: {roomid}</h2>
+        <div className="mb-6">
+          <h3 className="text-lg font-bold">Booking Details</h3>
+          <hr className="my-2" />
+          <p><strong>Name:</strong> {user.name}</p>
+          <p>
+            <strong>From Date:</strong>{' '}
+            <input type="date" onChange={(e) => setFromDate(e.target.value)} className="border rounded p-1" />
+          </p>
+          <p>
+            <strong>To Date:</strong>{' '}
+            <input type="date" onChange={(e) => setToDate(e.target.value)} className="border rounded p-1" />
+          </p>
+          <p><strong>Max Count:</strong> {room.maxcount}</p>
+        </div>
+
+        <div>
+          <h3 className="text-lg font-bold">Amount</h3>
+          <hr className="my-2" />
+          <p><strong>Rent per Day:</strong> ₹{room.rentperday}</p>
+          <p><strong>Total Days:</strong> {totalDays}</p>
+          <p><strong>Total Amount:</strong> ₹{totalAmount}</p>
+        </div>
+
+        <div className="mt-4 flex justify-end">
+          <StripeCheckout
+            amount={totalAmount * 100} // Stripe expects amount in cents
+            token={onToken}
+            currency="INR"
+            stripeKey="pk_test_51PMNeMP6OUGBeMBlaj9WphMUxWRr2QtPC5EYCGLgLTq3bbshjRqcvnvHYpy3gFcyk7fdSxN8MSRMzhAjW9Jez6qH00HldOHOz7"
+          >
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+              Pay Now
+            </button>
+          </StripeCheckout>
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

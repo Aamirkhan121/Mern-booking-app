@@ -63,9 +63,15 @@ const MyBooking = () => {
               <p className="text-gray-600"><strong>CheckOut:</strong> {new Date(booking.toDate).toLocaleDateString()}</p>
               <p className="text-gray-600"><strong>Transaction ID:</strong> {booking.transactionId}</p>
               <p className="text-gray-800 font-bold"><strong>Total Amount:</strong> ₹{booking.totalAmount}</p>
-              <p className={`font-bold `}>
-                <strong>Status:</strong> {booking.status =='cancelled'?( <Tag color="red">Cancelled</Tag>) :<Tag color="green">Confirmed</Tag> }
-              </p>
+              <p className={`font-bold`}>
+  <strong>Status: </strong>  
+  {booking.status === 'cancelled' ? (
+    <Tag color="red" style={{ zIndex: 0, position: 'relative' }}>Cancelled</Tag>
+  ) : (
+    <Tag color="green" style={{ zIndex: 0, position: 'relative' }}>Confirmed</Tag>
+  )}
+</p>
+
               {booking.status === 'booked' && (
                 <button
                   onClick={() => handleCancelBooking(booking._id,booking.room._id)}
