@@ -32,7 +32,7 @@ const AdminAddRoom = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:4000/api/admin/addroom', roomData);
+      const response = await axios.post('https://mern-booking-app-2ng3.onrender.com/api/admin/addroom', roomData);
       setLoading(false);
       setSuccess(true);
       setRoomData({

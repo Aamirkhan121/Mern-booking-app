@@ -14,7 +14,7 @@ const HomeScreen = () => {
     const fetchRooms = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:4000/api/getAllRooms');
+        const response = await axios.get('https://mern-booking-app-2ng3.onrender.com/api/getAllRooms');
         console.log(response.data.rooms)
         setRooms(response.data.rooms);
         setLoading(false);

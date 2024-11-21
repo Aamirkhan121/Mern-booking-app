@@ -3,7 +3,7 @@ import axios from 'axios';
 import AdminLayout from '../components/AdminLayout';
 import '../pages/style.css'; // Import the CSS file here
 
-const API_BASE_URL="http://localhost:4000"
+const API_BASE_URL="https://mern-booking-app-2ng3.onrender.com"
 
 const GetAllBookingData = () => {
   const [bookings, setBookings] = useState([]);

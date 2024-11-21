@@ -10,7 +10,7 @@ const GetUserData = () => {
     // Fetch users from the backend
     const fetchusers = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/admin/getUser');
+        const response = await axios.get('https://mern-booking-app-2ng3.onrender.com/api/admin/getUser');
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching users:', error);

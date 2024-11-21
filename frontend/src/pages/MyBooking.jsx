@@ -5,7 +5,7 @@ import Loader from '../components/Loader';
 import { Divider, Tag } from 'antd';
 import Swal from "sweetalert2"
 
-const API_BASE_URL = "http://localhost:4000";
+const API_BASE_URL = "https://mern-booking-app-2ng3.onrender.com";
 
 const MyBooking = () => {
   const[loading,setLoading]=useState()

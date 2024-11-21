@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdminLayout from '../components/AdminLayout';
-const API_BASE_URL="http://localhost:4000"
+const API_BASE_URL="https://mern-booking-app-2ng3.onrender.com"
 
 const Dashboard = () => {
   const [metrics, setMetrics] = useState({
