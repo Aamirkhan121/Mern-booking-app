@@ -16,7 +16,7 @@ const PORT = 4000;
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const allowedOrigins = ['http://localhost:5173', 'https://mern-booking-app-2-agi3.onrender.com'];
+const allowedOrigins = ['http://localhost:5173', 'https://mern-booking-app-2-agi3.onrender.com','https://mern-booking-admin.onrender.com'];
 
 app.use(cors({
   origin: function (origin, callback) {
